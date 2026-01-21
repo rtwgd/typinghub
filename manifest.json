@@ -1,7 +1,7 @@
 {
   "name": "AccelTyping | アクセルタイピング",
   "short_name": "AccelTyping",
-  "description": "タイピングを加速",
+  "description": "タイピングを加速させるポータルサイト",
   "start_url": "./index.html",
   "scope": "/",
   "display": "standalone",
