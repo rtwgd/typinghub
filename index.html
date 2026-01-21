@@ -266,6 +266,18 @@
     </div>
 
     <script>
+        // Use JavaScript to force links to open within the same standalone PWA window
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (link && link.href && !link.href.startsWith('javascript:')) {
+                const url = new URL(link.href);
+                // For cross-origin or even same-origin if it's opening in a new tab, 
+                // we force it to change the current window location.
+                e.preventDefault();
+                window.location.href = link.href;
+            }
+        });
+
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
