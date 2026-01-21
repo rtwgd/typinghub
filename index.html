@@ -139,6 +139,7 @@
             background: var(--card-hover);
             border-color: var(--main-color);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
         }
 
         .card-icon {
@@ -239,25 +240,25 @@
 
         <div class="portal-grid">
             <!-- Choubun -->
-            <a href="https://rtwgd.github.io/choubun/" class="portal-card">
+            <div onclick="location.href='https://rtwgd.github.io/choubun/'" class="portal-card">
                 <div class="card-icon">📄</div>
                 <div class="card-title">長文練習</div>
                 <div class="card-desc">ワープロ検定速度練習に対応した長文タイピング。詳細なミス判定機能付き。</div>
-            </a>
+            </div>
 
             <!-- Sushi Practice -->
-            <a href="https://rtwgd.github.io/sushi_practice/" class="portal-card">
+            <div onclick="location.href='https://rtwgd.github.io/sushi_practice/'" class="portal-card">
                 <div class="card-icon">🍣</div>
                 <div class="card-title">寿司打練習</div>
                 <div class="card-desc">寿司打でハイスコアを取りたい人へ。</div>
-            </a>
+            </div>
 
             <!-- Simple Typing -->
-            <a href="https://rtwgd.github.io/simpletyping/" class="portal-card">
+            <div onclick="location.href='https://rtwgd.github.io/simpletyping/'" class="portal-card">
                 <div class="card-icon">⌨️</div>
                 <div class="card-title">シンプルタイピング</div>
-                <div class="card-desc">無駄を削ぎ落とした王道のタイピング。タイピングを早くしたいならこれ一択。</div>
-            </a>
+                <div class="card-desc">無駄を削ぎ落とした王道のタイピング。タイピングを速くしたいならこれ一択。</div>
+            </div>
         </div>
 
         <footer>
@@ -266,17 +267,8 @@
     </div>
 
     <script>
-        // Use JavaScript to force links to open within the same standalone PWA window
-        document.addEventListener('click', function (e) {
-            const link = e.target.closest('a');
-            if (link && link.href && !link.href.startsWith('javascript:')) {
-                const url = new URL(link.href);
-                // For cross-origin or even same-origin if it's opening in a new tab, 
-                // we force it to change the current window location.
-                e.preventDefault();
-                window.location.href = link.href;
-            }
-        });
+        // Force cross-origin links to open in the same window (PWA standalone window)
+        // by avoiding regular <a> tags and using JavaScript navigation.
 
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -289,4 +281,3 @@
 </body>
 
 </html>
-
