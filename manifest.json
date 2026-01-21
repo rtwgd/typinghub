@@ -1,8 +1,9 @@
 {
   "name": "AccelTyping | アクセルタイピング",
   "short_name": "AccelTyping",
-  "description": "タイピングを加速",
+  "description": "タイピングを加速させるポータルサイト",
   "start_url": "./index.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#323437",
   "theme_color": "#e2b714",
