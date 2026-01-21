@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Practice Portal</title>
+    <title>AccelTyping | アクセルタイピング</title>
     <!-- Google Fonts -->
-    <link rel="manifest" href="/manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e2b714">
+    <link rel="apple-touch-icon" href="icon-512.png">
     <style>
         :root {
             --bg-color: #323437;
@@ -231,8 +233,8 @@
 
     <div class="container">
         <header>
-            <h1>TYPING HUB</h1>
-            <p></p>
+            <h1>ACCEL TYPING</h1>
+            <p>タイピングを加速させるポータルサイト</p>
         </header>
 
         <div class="portal-grid">
@@ -259,17 +261,19 @@
         </div>
 
         <footer>
-            &copy; 2026 RTWGD Typing Hub. All rights reserved.
+            &copy; 2026 AccelTyping (アクセルタイピング). All rights reserved.
         </footer>
     </div>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-  }
-</script>
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed', err));
+            });
+        }
+    </script>
 </body>
 
-
 </html>
-
