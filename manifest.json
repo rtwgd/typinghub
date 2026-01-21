@@ -1,21 +1,17 @@
 {
-  "name": "Typing Practice Portal",
-  "short_name": "TypingHub",
-  "description": "タイピング練習サイトのポータルアプリ",
+  "name": "AccelTyping | アクセルタイピング",
+  "short_name": "AccelTyping",
+  "description": "タイピングを加速",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#323437",
   "theme_color": "#e2b714",
   "icons": [
     {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
